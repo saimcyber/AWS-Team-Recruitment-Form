@@ -227,7 +227,7 @@ function launchConfetti() {
 
 /* ===== SUBMIT ===== */
 // Replace this URL with your Google Apps Script Web App URL
-const GOOGLE_SHEET_URL = "YOUR_GOOGLE_SHEET_URL";
+const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycby2GxEDb3EQHRT_D6icFwCavTT_jeaTHXRkokDfGEQJA6ZNoKiGt2SOgMTyMiWb6afAGA/exec";
 
 function submitForm() {
   if (!validatePage(4)) return;
