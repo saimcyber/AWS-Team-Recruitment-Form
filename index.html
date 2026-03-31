@@ -148,7 +148,7 @@
                   <input
                     type="text"
                     id="firstName"
-                    placeholder="John"
+                    placeholder="Ahmed"
                     autocomplete="given-name"
                   /><span class="hint">First Name</span>
                 </div>
@@ -156,7 +156,7 @@
                   <input
                     type="text"
                     id="lastName"
-                    placeholder="Doe"
+                    placeholder="Khan"
                     autocomplete="family-name"
                   /><span class="hint">Last Name</span>
                 </div>
@@ -167,7 +167,7 @@
               <input
                 type="email"
                 id="gmail"
-                placeholder="personal@gmail.com"
+                placeholder="name@gmail.com"
                 autocomplete="email"
               />
             </div>
@@ -176,7 +176,7 @@
               <input
                 type="tel"
                 id="phone"
-                placeholder="+91 1234567890"
+                placeholder="+92 300 1234567"
                 autocomplete="tel"
               />
             </div>
@@ -184,13 +184,17 @@
               <label for="branch">Branch <span class="req">*</span></label>
               <select id="branch">
                 <option value="" disabled selected>Please Select</option>
-                <option>CSE</option>
-                <option>AIML</option>
-                <option>DS/IT/CS</option>
-                <option>ECE/EIE</option>
-                <option>EEE</option>
-                <option>CIVIL</option>
-                <option>MECH</option>
+                <option>BS CS</option>
+                <option>BS CyberSec</option>
+                <option>BS DS</option>
+                <option>BS SE</option>
+                <option>BS AI</option>
+                <option>BS EE</option>
+                <option>BS FinTech</option>
+                <option>BS CompEng.</option>
+                <option>BBA</option>
+                <option>BS A&F</option>
+                <option>BS BA</option>
               </select>
             </div>
             <div class="field">
@@ -198,17 +202,37 @@
               <input
                 type="text"
                 id="section"
-                placeholder="Enter Your Section"
+                placeholder="e.g., BSCS-4A"
               />
             </div>
             <div class="field">
-              <label for="year">Year <span class="req">*</span></label>
+              <label for="year">Batch <span class="req">*</span></label>
               <select id="year">
                 <option value="" disabled selected>Please Select</option>
-                <option value="1">1st Year</option>
-                <option value="2">2nd Year</option>
-                <option value="3">3rd Year</option>
+                <option value="1">20th Batch</option>
+                <option value="2">21st Batch</option>
+                <option value="3">22nd Batch</option>
+                <option value="4">23rd Batch</option>
+                <option value="5">24th Batch</option>
+                <option value="5">25th Batch</option>
               </select>
+            </div>
+            <div class="field">
+              <label>Which team do you want to apply for? <span class="req">*</span></label>
+              <div class="radio-group" id="teamGroup">
+                <label class="radio-item">
+                  <input type="radio" name="team" value="Technical Team" /><span class="radio-dot"></span>
+                  Technical Team
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="team" value="Growth Team" /><span class="radio-dot"></span>
+                  Growth Team
+                </label>
+                <label class="radio-item">
+                  <input type="radio" name="team" value="Events & Operations Team" /><span class="radio-dot"></span>
+                  Events & Operations Team
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -242,7 +266,7 @@
               <textarea
                 id="whyJoin"
                 rows="5"
-                placeholder="Tell me Why Do You Want to Join AWS Cloud Club Core Team :)"
+                placeholder="Share why you want to join the AWS Cloud Club core team and how you can contribute."
               ></textarea>
             </div>
             <div class="field">
@@ -264,7 +288,7 @@
               <textarea
                 id="expectations"
                 rows="5"
-                placeholder="Tell me What do You Expect in Return from AWS Cloud Clubs :)"
+                placeholder="Describe what you expect to learn and achieve through this club."
               ></textarea>
             </div>
           </div>
@@ -361,11 +385,11 @@
             </div>
             <div class="field">
               <label for="otherSkill">If Other, What Skill Do You Have?</label>
-              <input type="text" id="otherSkill" placeholder="Which Skill ?" />
+              <input type="text" id="otherSkill" placeholder="e.g., Video Editing" />
             </div>
             <div class="field">
               <label for="proofLink">Proof of Your Skill :)</label>
-              <input type="text" id="proofLink" placeholder="Links for Proof" />
+              <input type="text" id="proofLink" placeholder="e.g., github.com/username or linkedin.com/in/username" />
               <p class="bonus-note">
                 BONUS – If You Have Organised any Events or Made any Projects
                 Related to the Above Mentioned Skill, Add that Link Here!
@@ -396,8 +420,8 @@
           <div class="card-body">
             <div class="field">
               <label
-                >Are you willing to attend the AWS Learning Workshop on Saturday
-                twice a month? <span class="req">*</span></label
+                >Are you willing to attend the AWS Learning Workshop
+twice a month? <span class="req">*</span></label
               >
               <div class="radio-group" id="workshopGroup">
                 <label class="radio-item"

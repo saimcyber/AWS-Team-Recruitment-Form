@@ -80,6 +80,14 @@ function validatePage(page) {
         valid = false;
       }
     }
+    if (document.querySelectorAll('input[name="team"]:checked').length === 0) {
+      const g = document.getElementById("teamGroup");
+      const m = document.createElement("div");
+      m.className = "error-msg";
+      m.textContent = "Please select a team";
+      g.parentNode.insertBefore(m, g.nextSibling);
+      valid = false;
+    }
   }
 
   if (page === 2) {
@@ -227,7 +235,7 @@ function launchConfetti() {
 
 /* ===== SUBMIT ===== */
 // Replace this URL with your Google Apps Script Web App URL
-const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycby2GxEDb3EQHRT_D6icFwCavTT_jeaTHXRkokDfGEQJA6ZNoKiGt2SOgMTyMiWb6afAGA/exec";
+const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycby3OofPKAM_l6TYvnGkp61la2wqxCCegxATNRmhlBLFpGEh6mTgfuiWcmyrD-d0VGvKEw/exec";
 
 function submitForm() {
   if (!validatePage(4)) return;
@@ -240,6 +248,7 @@ function submitForm() {
     branch: document.getElementById("branch").value,
     section: document.getElementById("section").value,
     year: document.getElementById("year").value,
+    team: document.querySelector('input[name="team"]:checked').value,
     whyJoin: document.getElementById("whyJoin").value,
     improvements: document.getElementById("improvements").value,
     expectations: document.getElementById("expectations").value,
