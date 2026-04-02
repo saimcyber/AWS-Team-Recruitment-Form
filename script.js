@@ -237,26 +237,36 @@ function launchConfetti() {
 // Replace this URL with your Google Apps Script Web App URL
 const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycby3OofPKAM_l6TYvnGkp61la2wqxCCegxATNRmhlBLFpGEh6mTgfuiWcmyrD-d0VGvKEw/exec";
 
+// Sanitize data to prevent Google Sheets formula injection
+function sanitizeForGoogleSheets(value) {
+  if (!value || typeof value !== "string") return value;
+  // If value starts with formula-triggering characters, prepend a single quote
+  if (value.match(/^[=+\-@]/)) {
+    return "'" + value;
+  }
+  return value;
+}
+
 function submitForm() {
   if (!validatePage(4)) return;
 
   const data = {
-    firstName: document.getElementById("firstName").value,
-    lastName: document.getElementById("lastName").value,
-    gmail: document.getElementById("gmail").value,
-    phone: document.getElementById("phone").value,
-    branch: document.getElementById("branch").value,
-    section: document.getElementById("section").value,
-    year: document.getElementById("year").value,
+    firstName: sanitizeForGoogleSheets(document.getElementById("firstName").value),
+    lastName: sanitizeForGoogleSheets(document.getElementById("lastName").value),
+    gmail: sanitizeForGoogleSheets(document.getElementById("gmail").value),
+    phone: sanitizeForGoogleSheets(document.getElementById("phone").value),
+    branch: sanitizeForGoogleSheets(document.getElementById("branch").value),
+    section: sanitizeForGoogleSheets(document.getElementById("section").value),
+    year: sanitizeForGoogleSheets(document.getElementById("year").value),
     team: document.querySelector('input[name="team"]:checked').value,
-    whyJoin: document.getElementById("whyJoin").value,
-    improvements: document.getElementById("improvements").value,
-    expectations: document.getElementById("expectations").value,
+    whyJoin: sanitizeForGoogleSheets(document.getElementById("whyJoin").value),
+    improvements: sanitizeForGoogleSheets(document.getElementById("improvements").value),
+    expectations: sanitizeForGoogleSheets(document.getElementById("expectations").value),
     skills: [...document.querySelectorAll('input[name="skills"]:checked')].map(
       (c) => c.value,
     ),
-    otherSkill: document.getElementById("otherSkill").value,
-    proofLink: document.getElementById("proofLink").value,
+    otherSkill: sanitizeForGoogleSheets(document.getElementById("otherSkill").value),
+    proofLink: sanitizeForGoogleSheets(document.getElementById("proofLink").value),
     workshop: document.querySelector('input[name="workshop"]:checked').value,
   };
 
